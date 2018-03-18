@@ -1,0 +1,48 @@
+读取配置
+Config::get()
+config()
+
+动态配置
+Config::set('config name','config value');
+Config::set($config=array());
+config($config=array());
+
+扩展配置
+extra->queue.php 不用读取，系统自动加载
+
+配置加载
+自动：config()  Config::get() extra
+配置优先级
+全局默认配置<应用<扩展<场景<模块<动态
+
+默认配置:thinkphp\convention.php//不建议在这个文件改配置
+应用:application\config.php
+扩展:extra\xx.php//2唯数组
+场景:config.php app_status参数
+模块:application/module/config.php  原来是application/config.php
+动态:模型或控制器中Config::set(..);
+
+配置开发和生产环境数据库
+config.php
+app_status=>'product'//product.php
+app_status=>'dev'//dev.php
+
+
+配置隔离
+加载配置:Config::load('配置文件名绝对路径','配置项名称','作用域名称');APP_PATH->application目录
+读取：Config::get('','作用域');
+
+根目录
+cd .> .env
+配置格式：attr=value
+
+use Think\Env;
+Env::get('myenv');
+
+优化配置:
+入口文件中使用CONF_PATH常量指定配置目录
+
+
+
+
+
