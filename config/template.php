@@ -30,4 +30,9 @@ return [
     'taglib_begin' => '{',
     // 标签库标签结束标记
     'taglib_end'   => '}',
+    //开启模版布局
+    //'layout_on' =>'false',
+    //模版文件
+    //'layout_name' =>'layout',
+    //'layout_item'=>'{__TEXT__}',
 ];

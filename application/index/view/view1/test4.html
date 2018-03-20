@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>{$title|default="默认标题"}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="" />
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+        crossorigin="anonymous">
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <p>{$prev}</p>
+    <!-- <?php print_r($data) ?>  -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-2"></div>
+            <div class="col-md-8">
+                <h2 class="text-center">信息列表</h2>
+                <table class="table table-bordered text-center">
+                    <tr>
+                        <td>编号</td>
+                        <td>名字</td>
+                        <td>密码</td>
+                    </tr>
+                    {volist name="data" id="vo"}
+                    <tr>
+                        <td>
+                            {if $vo['id']<20}
+                            <span>xiaolao</span>
+                            {else/}
+                            <span>dalao</span>
+                            {/if}
+                        </td>
+                        <td>{$vo['username']}</td>
+                        <td>{$vo['password']}</td>
+                    </tr>
+                    {/volist}
+                </table>
+            </div>
+            <div class="col-md-2"></div>
+            <div class="text-center">
+                 {$data|raw}
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<p>{$name}</p>
+<p>{$age}</p>
+<p>{$sex}</p>
+<p>{$salary}</p>
+{//output array}
+{$goods.0.id}<hr>
+{$goods[1]['id']}<hr>
+{$obj->name}
+{//output constant}
+<hr>
+{$Think.const.NAME}
+<hr>
+{$Think.const.PHP_OS}
+<hr>
+{//系统变量}
+<!-- $_SERVER["PHP_SELF"] -->
+{$Think.server.php_self}<br>
+{$Think.server.session.id}<br>
+{$Think.server.get.name}<br>
+
+{$Think.config.database.hostname}
+
+{$Request.get.name}
+<br>
+{$Request.param.name}
+<br>
+{$Request.path}
+<br>
+{$Request.root.true}
+<br>
+{$Request.controller}
+<br>
+{$Request.action}
+<br>
+{$Request.host}
